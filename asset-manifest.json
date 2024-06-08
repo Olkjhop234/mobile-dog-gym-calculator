@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.css": "/mobile-dog-gym-calculator/static/css/main.040d5ef0.chunk.css",
-    "main.js": "/mobile-dog-gym-calculator/static/js/main.edae32ac.chunk.js",
-    "main.js.map": "/mobile-dog-gym-calculator/static/js/main.edae32ac.chunk.js.map",
-    "runtime-main.js": "/mobile-dog-gym-calculator/static/js/runtime-main.c942c013.js",
-    "runtime-main.js.map": "/mobile-dog-gym-calculator/static/js/runtime-main.c942c013.js.map",
-    "static/js/2.81a7b916.chunk.js": "/mobile-dog-gym-calculator/static/js/2.81a7b916.chunk.js",
-    "static/js/2.81a7b916.chunk.js.map": "/mobile-dog-gym-calculator/static/js/2.81a7b916.chunk.js.map",
+    "main.css": "/mobile-dog-gym-calculator/static/css/main.01f8b364.css",
+    "main.js": "/mobile-dog-gym-calculator/static/js/main.c4524241.js",
     "index.html": "/mobile-dog-gym-calculator/index.html",
-    "static/css/main.040d5ef0.chunk.css.map": "/mobile-dog-gym-calculator/static/css/main.040d5ef0.chunk.css.map",
-    "static/js/2.81a7b916.chunk.js.LICENSE.txt": "/mobile-dog-gym-calculator/static/js/2.81a7b916.chunk.js.LICENSE.txt"
+    "main.01f8b364.css.map": "/mobile-dog-gym-calculator/static/css/main.01f8b364.css.map",
+    "main.c4524241.js.map": "/mobile-dog-gym-calculator/static/js/main.c4524241.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.c942c013.js",
-    "static/js/2.81a7b916.chunk.js",
-    "static/css/main.040d5ef0.chunk.css",
-    "static/js/main.edae32ac.chunk.js"
+    "static/css/main.01f8b364.css",
+    "static/js/main.c4524241.js"
   ]
 }

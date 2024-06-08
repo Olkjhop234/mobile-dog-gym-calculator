@@ -1,2 +1,0 @@
-(this["webpackJsonpmobile-dog-gym-calculator"]=this["webpackJsonpmobile-dog-gym-calculator"]||[]).push([[0],{10:function(e,c,t){"use strict";t.r(c);var n=t(1),o=t.n(n),r=t(3),l=t.n(r),i=(t(8),t(0));var s=function(){return Object(i.jsx)("div",{className:"App",children:Object(i.jsx)("h1",{children:"Hello, world!"})})};l.a.render(Object(i.jsx)(o.a.StrictMode,{children:Object(i.jsx)(s,{})}),document.getElementById("root"))},8:function(e,c,t){}},[[10,1,2]]]);
-//# sourceMappingURL=main.edae32ac.chunk.js.map
