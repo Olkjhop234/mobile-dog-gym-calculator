@@ -29,19 +29,19 @@ const InputForm = ({ onChange, inputValues }) => {
       <div>
         <h2 className="text-xl font-bold">Estimated Monthly Operational Cost</h2>
         <input type="number" placeholder="Fuel" onChange={(e) => handleChange('operationalCosts', 'fuel', e.target.value)} className="border p-2 w-full" />
-        <div className="text-right">Weekly Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.fuel || 0) / 4.33)}</div>
+        <div className="text-right">Weekly Fuel Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.fuel || 0) / 4.33)}</div>
         <input type="number" placeholder="Labor" onChange={(e) => handleChange('operationalCosts', 'labor', e.target.value)} className="border p-2 w-full" />
-        <div className="text-right">Weekly Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.labor || 0) / 4.33)}</div>
+        <div className="text-right">Weekly Labor Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.labor || 0) / 4.33)}</div>
         <input type="number" placeholder="Insurance" onChange={(e) => handleChange('operationalCosts', 'insurance', e.target.value)} className="border p-2 w-full" />
-        <div className="text-right">Weekly Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.insurance || 0) / 4.33)}</div>
+        <div className="text-right">Weekly Insruance Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.insurance || 0) / 4.33)}</div>
         <input type="number" placeholder="Maintenance" onChange={(e) => handleChange('operationalCosts', 'maintenance', e.target.value)} className="border p-2 w-full" />
-        <div className="text-right">Weekly Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.maintenance || 0) / 4.33)}</div>
+        <div className="text-right">Weekly Maintenance Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.maintenance || 0) / 4.33)}</div>
         <input type="number" placeholder="Software" onChange={(e) => handleChange('operationalCosts', 'software', e.target.value)} className="border p-2 w-full" />
-        <div className="text-right">Weekly Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.software || 0) / 4.33)}</div>
+        <div className="text-right">Weekly Software Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.software || 0) / 4.33)}</div>
         <input type="number" placeholder="Vehicle Loan" onChange={(e) => handleChange('operationalCosts', 'vehicleLoan', e.target.value)} className="border p-2 w-full" />
-        <div className="text-right">Weekly Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.vehicleLoan || 0) / 4.33)}</div>
+        <div className="text-right">Weekly Vehicle Loan Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.vehicleLoan || 0) / 4.33)}</div>
         <input type="number" placeholder="Other Loans" onChange={(e) => handleChange('operationalCosts', 'otherLoans', e.target.value)} className="border p-2 w-full" />
-        <div className="text-right">Weekly Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.otherLoans || 0) / 4.33)}</div>
+        <div className="text-right">Weekly Other Loans Estimate: ${formatCurrency(parseFloat(inputValues.operationalCosts.otherLoans || 0) / 4.33)}</div>
         <div className="text-right font-bold">Total Monthly Operational Cost: ${formatCurrency(
           Object.values(inputValues.operationalCosts).reduce((acc, val) => acc + parseFloat(val || 0), 0)
         )}</div>
@@ -78,18 +78,46 @@ const InputForm = ({ onChange, inputValues }) => {
           </>
         )}
         <label className="block">
-          <input type="checkbox" checked={contractsEnabled} onChange={(e) => { setContractsEnabled(e.target.checked); handleChange('revenueStreams', 'contractsEnabled', e.target.checked); }} className="mr-2" />
-          Enable Contracts
-        </label>
-        {contractsEnabled && (
-          <>
-            <p>Contracts are deals you've made with businesses and apartment buildings. This assumes you have a deal with an apartment building, for example, to run their guest and residents at no additional cost to the pet parent. For example, you have a contract that for $350 a month to visit the site once a month for 3 hours.</p>
-          <input type="number" placeholder="Number of Contracts" onChange={(e) => handleChange('revenueStreams', 'contractCustomers', e.target.value)} className="border p-2 w-full" />
-            <div className="text-right">Total Monthly Contract Revenue: ${formatCurrency(
-              parseFloat(inputValues.revenueStreams.contractPrice || 0) * parseFloat(inputValues.revenueStreams.contractCustomers || 0)
-            )}</div>
-          </>
-        )}
+  <input
+    type="checkbox"
+    checked={contractsEnabled}
+    onChange={(e) => {
+      setContractsEnabled(e.target.checked);
+      handleChange('revenueStreams', 'contractsEnabled', e.target.checked);
+    }}
+    className="mr-2"
+  />
+  Enable Contracts
+</label>
+{contractsEnabled && (
+  <>
+    <p>
+      Contracts are deals you've made with businesses and apartment buildings.
+      This assumes you have a deal with an apartment building, for example, to
+      run their guest and residents at no additional cost to the pet parent. For
+      example, you have a contract that for $350 a month to visit the site once
+      a month for 3 hours.
+    </p>
+    <input
+      type="number"
+      placeholder="Contract Price"
+      onChange={(e) => handleChange('revenueStreams', 'contractPrice', e.target.value)}
+      className="border p-2 w-full"
+    />
+    <input
+      type="number"
+      placeholder="Number of Contracts"
+      onChange={(e) => handleChange('revenueStreams', 'contractCustomers', e.target.value)}
+      className="border p-2 w-full"
+    />
+    <div className="text-right">
+      Total Monthly Contract Revenue: ${formatCurrency(
+        parseFloat(inputValues.revenueStreams.contractPrice || 0) *
+        parseFloat(inputValues.revenueStreams.contractCustomers || 0)
+      )}
+    </div>
+  </>
+)}
         <div className="text-right font-bold">Total Monthly Revenue: ${formatCurrency(
           (parseFloat(inputValues.revenueStreams.individualSessionPrice || 0) * parseFloat(inputValues.revenueStreams.individualSessionCustomers || 0)) +
           (subscriptionsEnabled ? (parseFloat(inputValues.revenueStreams.subscriptionPrice || 0) * parseFloat(inputValues.revenueStreams.subscriptionCustomers || 0)) + (parseFloat(inputValues.revenueStreams.subscriptionSessionCost || 0) * parseFloat(inputValues.revenueStreams.subscriptionSessions || 0) * parseFloat(inputValues.revenueStreams.subscriptionCustomers || 0)) : 0) +
