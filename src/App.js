@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Calculator from './components/Calculator';
 
 function App() {
+  useEffect(() => {
+    console.log("App component rendered");
+  }, []);
+
   return (
     <div className="App">
-      <h1>Hello, world!</h1>
+      <Calculator />
     </div>
   );
 }
