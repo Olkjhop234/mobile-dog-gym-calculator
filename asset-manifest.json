@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mobile-dog-gym-calculator/static/css/main.b808cb7f.css",
-    "main.js": "/mobile-dog-gym-calculator/static/js/main.03b9da4d.js",
+    "main.js": "/mobile-dog-gym-calculator/static/js/main.cca60988.js",
     "index.html": "/mobile-dog-gym-calculator/index.html",
     "main.b808cb7f.css.map": "/mobile-dog-gym-calculator/static/css/main.b808cb7f.css.map",
-    "main.03b9da4d.js.map": "/mobile-dog-gym-calculator/static/js/main.03b9da4d.js.map"
+    "main.cca60988.js.map": "/mobile-dog-gym-calculator/static/js/main.cca60988.js.map"
   },
   "entrypoints": [
     "static/css/main.b808cb7f.css",
-    "static/js/main.03b9da4d.js"
+    "static/js/main.cca60988.js"
   ]
 }
